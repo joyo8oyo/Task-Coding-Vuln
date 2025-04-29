@@ -44,7 +44,7 @@ else:
     with open(full_path, 'r') as file:
         print(file.read())
 ```
-Result :
+Result:
 ![image](https://github.com/user-attachments/assets/b53091d8-2e9c-4caa-8ec9-a534a924abcf)
 
 Now, the file path is restricted to the base_dir, preventing directory traversal.
@@ -59,6 +59,10 @@ You can use tools like pip to check for updates:
 ```pip list --outdated```
 Then update them with:
 ```pip install --upgrade <package_name>```
+
+Result:
+![image](https://github.com/user-attachments/assets/52450e3c-5911-4ebc-88d5-1f219271bc3e)
+
  
 # Vulnerability 4: Insecure Deserialization
 Deserializing untrusted data with pickle can execute arbitrary code.

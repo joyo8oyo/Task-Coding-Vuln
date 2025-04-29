@@ -10,6 +10,11 @@ cursor.execute(query, (username,))
 results = cursor.fetchall()
 print(results)
 ```
+
+Before :
+
+![image](https://github.com/user-attachments/assets/42602f73-c9ce-4f2b-85b3-3f5abb954765)
+
 Now, the input is safely passed as a parameter, preventing SQL injection.
  
 # Vulnerability 2: Directory Traversal

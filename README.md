@@ -90,5 +90,11 @@ elif username in roles and roles[username] == 'user':
 else:
     print("Access denied")
 ```
- 
+ Before :
+ ![image](https://github.com/user-attachments/assets/8f290aef-967d-407e-9299-6a1600c2a220)
+
+ After :
+ ![image](https://github.com/user-attachments/assets/1cd2b74e-fd52-47aa-bbb8-597f83360f2e)
+
+
 Now, different roles have different levels of access, ensuring proper access control.

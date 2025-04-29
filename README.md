@@ -45,7 +45,11 @@ else:
         print(file.read())
 ```
 
-Result:
+Before :
+
+![image](https://github.com/user-attachments/assets/cae4a123-2bfb-4d45-bfa1-e0422b4d29ab)
+
+After :
 
 ![image](https://github.com/user-attachments/assets/b53091d8-2e9c-4caa-8ec9-a534a924abcf)
 

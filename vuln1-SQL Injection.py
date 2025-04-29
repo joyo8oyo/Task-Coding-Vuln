@@ -2,7 +2,7 @@
 # Vulnerable code
 import sqlite3
 
-conn = sqlite3.connect('example.db')
+conn = sqlite3.connect('kanjeng.db')
 cursor = conn.cursor()
 try:
     username = input("Enter username: ")

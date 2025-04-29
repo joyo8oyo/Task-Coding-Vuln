@@ -44,7 +44,6 @@ else:
     with open(full_path, 'r') as file:
         print(file.read())
 ```
-
 Result :
 ![image](https://github.com/user-attachments/assets/b53091d8-2e9c-4caa-8ec9-a534a924abcf)
 

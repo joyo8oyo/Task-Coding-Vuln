@@ -5,10 +5,20 @@ An attacker could input something like ' OR 1=1 -- to retrieve all users or perf
  
 ## Fix:
 Use parameterized queries to safely handle user input
-```query = "SELECT * FROM users WHERE username = ?"
+```import sqlite3
+
+conn = sqlite3.connect('kanjeng.db')
+cursor = conn.cursor()
+try:
+    username = input("Enter username: ")
+except EOFError:
+    print("Error: No input provided for username.")
+    username = "default_user"  # Set a default value
+query = "SELECT * FROM users WHERE username = ?"
 cursor.execute(query, (username,))
 results = cursor.fetchall()
 print(results)
+
 ```
 
 Before :

@@ -13,7 +13,19 @@ print(results)
 Now, the input is safely passed as a parameter, preventing SQL injection.
  
 # Vulnerability 2: Directory Traversal
- 
+
+ ```
+import os
+
+try:
+    file_path = input("Enter file path: ")
+except EOFError:
+    print("Error: No input provided for file path.")
+    file_path = "default_path.txt"  # Set a default value
+
+with open(file_path, 'r') as file:
+    print(file.read())
+```
  This code allows the user to specify any file path, which could be outside the intended directory.
  An attacker could input '../secret.txt' to access files outside the web root, potentially exposing sensitive data.
  

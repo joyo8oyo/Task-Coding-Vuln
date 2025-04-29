@@ -14,6 +14,12 @@ print(results)
 Before :
 
 ![image](https://github.com/user-attachments/assets/42602f73-c9ce-4f2b-85b3-3f5abb954765)
+![image](https://github.com/user-attachments/assets/76e7b7ee-56b2-4e26-b146-9c3922cdfa53)
+
+
+After :
+![image](https://github.com/user-attachments/assets/358b6d2f-72dd-4315-b750-c6819db3a118)
+
 
 Now, the input is safely passed as a parameter, preventing SQL injection.
  

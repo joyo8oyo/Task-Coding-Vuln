@@ -112,11 +112,15 @@ print(untrusted_data)
 ```
 Before :
 
-![image](https://github.com/user-attachments/assets/9218bdb9-a540-4a1d-ab7f-9c76c1825d7e)
+![image](https://github.com/user-attachments/assets/f68c4f81-18c8-474e-af37-8fc8f99ba83f)
+
+![image](https://github.com/user-attachments/assets/d51848f7-1247-4509-b7eb-90e15857e203)
+
 
 After :
 
-![image](https://github.com/user-attachments/assets/3ab5ed0f-d171-4246-87a9-d671a14db436)
+![image](https://github.com/user-attachments/assets/2737ab5f-ac69-408e-b6f8-8ce6cacbb851)
+
 
 JSON is safer because it doesn't allow arbitrary code execution.
  

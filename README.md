@@ -28,6 +28,7 @@ Before :
 
 
 After :
+
 ![image](https://github.com/user-attachments/assets/358b6d2f-72dd-4315-b750-c6819db3a118)
 
 
@@ -109,8 +110,12 @@ except EOFError:
 untrusted_data = json.loads(data)
 print(untrusted_data)
 ```
+Before :
+
+![image](https://github.com/user-attachments/assets/9218bdb9-a540-4a1d-ab7f-9c76c1825d7e)
 
 After :
+
 ![image](https://github.com/user-attachments/assets/3ab5ed0f-d171-4246-87a9-d671a14db436)
 
 JSON is safer because it doesn't allow arbitrary code execution.

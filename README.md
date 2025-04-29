@@ -109,6 +109,10 @@ except EOFError:
 untrusted_data = json.loads(data)
 print(untrusted_data)
 ```
+
+After :
+![image](https://github.com/user-attachments/assets/3ab5ed0f-d171-4246-87a9-d671a14db436)
+
 JSON is safer because it doesn't allow arbitrary code execution.
  
 # Vulnerability 5: Broken Access Control

@@ -1,0 +1,67 @@
+# Step-by-Step: Running the Vulnerable Script
+1. Create a Sample SQLite Database: 
+Before running the script, create a SQLite database named kanjeng.db with a users table and some sample data. You can do this using the following Python script:
+
+import sqlite3
+
+conn = sqlite3.connect('kanjeng.db')
+cursor = conn.cursor()
+
+# Create users table
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT NOT NULL
+    )
+''')
+
+# Insert sample data
+cursor.execute("INSERT INTO users (username) VALUES ('alice')")
+cursor.execute("INSERT INTO users (username) VALUES ('bob')")
+conn.commit()
+conn.close() 
+
+Save this script as sql-inject-kanjeng.py and run it using python sql-inject-kanjeng.py.​
+
+2. Understand the Vulnerable Script
+The vulnerable script reads a username from user input and constructs an SQL query by directly inserting the input into the query string. This approach is susceptible to SQL injection attacks.​
+
+import sqlite3
+
+conn = sqlite3.connect('example.db')
+cursor = conn.cursor()
+try:
+    username = input("Enter username: ")
+except EOFError:
+    print("Error: No input provided for username.")
+    username = "default_user"  # Set a default value
+query = f"SELECT * FROM users WHERE username = '{username}'"
+cursor.execute(query)
+results = cursor.fetchall()
+print(results)
+
+Vulnerability Explanation:
+
+If a user inputs a malicious string like ' OR 1=1 --, the query becomes:
+
+SELECT * FROM users WHERE username = '' OR 1=1 --'
+
+This condition OR 1=1 is always true, so the query returns all records from the users table, potentially exposing sensitive data.​
+
+3. Run the Vulnerable Script
+Execute the Script: Run the script using the command:​
+
+python sql-inject-kanjeng.py
+
+Provide Input: When prompted, enter a username. To test the SQL injection vulnerability, input:​
+
+' OR 1=1 --
+
+Observe the Output: The script will display all records from the users table, demonstrating the SQL injection vulnerability.​
+
+
+
+
+
+
+

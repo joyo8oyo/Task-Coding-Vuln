@@ -1,0 +1,41 @@
+# Understand the Vulnerable Script
+The vulnerable script reads pickled data from user input and deserializes it using pickle.loads(). This approach is susceptible to code execution if the input is malicious.​
+
+import pickle
+import ast  # <-- add this line
+
+try:
+    data = input("Enter pickled data: ")
+except EOFError:
+    print("Error: No input provided for pickled data.")
+    data = ""  # Set a default value
+data = ast.literal_eval(data)  # <-- add this line
+untrusted_data = pickle.loads(data)
+print(untrusted_data)
+
+# Vulnerability Explanation:
+If a user inputs a malicious pickled string that, when deserialized, executes arbitrary code, it can compromise the system.
+
+# Run the Vulnerable Script
+Execute the Script: Run the script using the command:​
+python pickle-code.py
+
+# Copy the output and paste it as input when running pickle-code.py
+Warning: Deserializing untrusted input with pickle is dangerous and can lead to arbitrary code execution. Only use this method with trusted data.​
+
+# Fixing the Vulnerability: Using JSON for Safe Deserialization
+To prevent insecure deserialization, use a safe format like JSON, which doesn't allow arbitrary code execution. Here's the secure version of the script:
+
+import json
+
+try:
+    data = input("Enter JSON data: ")
+except EOFError:
+    print("Error: No input provided.")
+    data = ""
+
+try:
+    untrusted_data = json.loads(data)
+    print("Deserialized data:", untrusted_data)
+except json.JSONDecodeError as e:
+    print("Caught JSON decode error:", e)

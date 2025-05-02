@@ -1,0 +1,22 @@
+1. Open your terminal (Command Prompt / PowerShell on Windows, or Terminal on macOS/Linux).
+2. Check for outdated Python packages:
+  pip list --outdated
+
+This will display a list of installed packages and their current versions vs available latest versions.
+
+3. Upgrade an outdated package:
+For example, to upgrade the requests library:
+  pip install --upgrade requests
+
+4. (Optional) Upgrade all packages using a script:
+You can use this one-liner to upgrade all outdated packages automatically:
+  pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U
+
+💡 Note: This is best used in virtual environments to avoid affecting system-wide packages.
+🛡️ Security Tip:
+To automate checking for outdated packages and known vulnerabilities, consider tools like:
+
+pip-audit:
+
+pip install pip-audit
+pip-audit

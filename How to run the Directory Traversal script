@@ -1,0 +1,33 @@
+To run your Python script on a Windows system, follow these steps:
+
+✅ Step 1: Save the Script
+Open Notepad or any text editor. Paste your script into the editor.
+
+Save the file as vuln2.py in a directory of your choice, for example, C:\Users\kanjeng\Downloads.
+
+✅ Step 2: Open Command Prompt
+Press Win + R, type cmd, and press Enter.
+In the Command Prompt window, navigate to the directory where your script is saved. For example:
+    cd C:\Users\kanjeng\Downloads
+
+✅ Step 3: Run the Script
+Execute the script by typing:
+    python vuln2.py
+
+If you have multiple versions of Python installed, you might need to specify the version:
+python3 vuln2.py
+If Python is not recognized, ensure it's added to your system's PATH environment variable.
+
+✅ Step 4: Provide Input When Prompted
+The script will prompt:
+Enter file name:
+
+Type the name of the file you wish to read, such as:
+secret.txt
+
+Ensure that the file exists within the C:\Users\kanjeng\Downloads directory. 
+The script includes a security check to prevent directory traversal attacks, so it will only access files within this base directory.
+
+🔒 Security Note
+The script is designed to prevent directory traversal by verifying that the requested file resides within the specified base directory. 
+This means inputs like ..\..\secret.txt will result in an "Access denied" message, ensuring that files outside the intended directory cannot be accessed.
